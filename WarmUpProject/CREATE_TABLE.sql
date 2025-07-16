@@ -138,7 +138,6 @@ CREATE TABLE Personnel (
 -- Table: HeadPersonnel
 CREATE TABLE HeadPersonnel (
     ID INT PRIMARY KEY,
-    HeadRoleID INT,
     FOREIGN KEY (ID) REFERENCES Personnel(ID)
   
     
@@ -148,7 +147,6 @@ CREATE TABLE HeadPersonnel (
 -- Table: HeadRole
 CREATE TABLE HeadRoles (
     ID INT PRIMARY KEY,
-    HeadPersonnelID INT,
     HeadRole VARCHAR(50)
     
 );
