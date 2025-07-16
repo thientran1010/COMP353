@@ -11,7 +11,8 @@ CREATE TABLE Person (
     telephone_number VARCHAR(20),
     email_address VARCHAR(100),
     postal_code VARCHAR(6),
-    gender VARCHAR(10)
+    gender VARCHAR(10),
+    
 );
 
 -- Table: ClubMember
