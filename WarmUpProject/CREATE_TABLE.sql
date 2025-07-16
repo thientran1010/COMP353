@@ -135,8 +135,6 @@ CREATE TABLE Personnel (
 );
 
 
-
-
 -- Table: HeadPersonnel
 CREATE TABLE HeadPersonnel (
     ID INT PRIMARY KEY,
@@ -154,11 +152,21 @@ CREATE TABLE HeadRoles (
     HeadRole VARCHAR(50)
     
 );
+-- Table: HeadPersonnelHeadRoles
+CREATE TABLE HeadPersonnelHeadRoles (
+    HeadPersonnelID INT UNIQUE,
+    HeadRoleID INT UNIQUE,
+    PRIMARY KEY (HeadPersonnelID,HeadRoleID),
+    FOREIGN KEY (HeadPersonnelID) REFERENCES HeadPersonnel(ID),
+    FOREIGN KEY (HeadRoleID) REFERENCES HeadRoles(ID)
+    
+    
+);
 
-ALTER TABLE HeadPersonnel
-ADD FOREIGN KEY (HeadRoleID) REFERENCES HeadRoles(ID);
-ALTER TABLE HeadRoles
-ADD FOREIGN KEY (ID) REFERENCES HeadPersonnel(HeadRoleID);
+
+
+
+
 
 
 -- Table: TimePeriod
