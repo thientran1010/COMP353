@@ -60,7 +60,6 @@ CREATE TABLE FamilyMember (
     PRIMARY KEY (person_id,family_id),
     FOREIGN KEY (person_id) REFERENCES ClubMember(person_id),
     FOREIGN KEY (family_id) REFERENCES ClubMember(person_id)
-    
 );
 
 CREATE TABLE SecondaryFamilyContact (
@@ -122,7 +121,6 @@ CREATE TABLE MemberLocation (
 CREATE TABLE Hobby (
     hobby_id INT PRIMARY KEY AUTO_INCREMENT,
     name ENUM('volleyball', 'soccer', 'tennis', 'ping pong', 'swimming', 'hockey', 'golf') UNIQUE NOT NULL
-    
 );
 
 
@@ -202,7 +200,10 @@ CREATE TABLE Email (
 
 CREATE TABLE EmailLog (
     log_id INT PRIMARY KEY AUTO_INCREMENT,
-    sender_location_id INT,
-    FOREIGN KEY (log_id) REFERENCES Location(email_id)
-    FOREIGN KEY (sender_location_id) REFERENCES Location(location_id)
+    email_id INT NOT NULL,
+    sender_location_id INT NOT NULL,
+    CONSTRAINT fk_emaillog_email
+        FOREIGN KEY (email_id) REFERENCES Email(email_id),
+    CONSTRAINT fk_emaillog_location
+        FOREIGN KEY (sender_location_id) REFERENCES Location(location_id)
 );
