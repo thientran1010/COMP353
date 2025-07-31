@@ -93,7 +93,7 @@ CREATE TABLE PersonnelLocation (
     start_date DATE NOT NULL,
     end_date DATE,
     PRIMARY KEY (person_id, location_id, start_date),
-    FOREIGN KEY (person_id) REFERENCES HeadPersonnel(person_id),
+    FOREIGN KEY (person_id) REFERENCES Personnel(person_id),
     FOREIGN KEY (location_id) REFERENCES Location(location_id)
 );
 
@@ -103,7 +103,7 @@ CREATE TABLE HeadPersonnelLocation (
     start_date DATE NOT NULL,
     end_date DATE,
     PRIMARY KEY (person_id, location_id, start_date),
-    FOREIGN KEY (person_id) REFERENCES Personnel(person_id),
+    FOREIGN KEY (person_id) REFERENCES HeadPersonnel(person_id),
     FOREIGN KEY (location_id) REFERENCES Location(location_id)
 );
 
@@ -203,6 +203,6 @@ CREATE TABLE Email (
 CREATE TABLE EmailLog (
     log_id INT PRIMARY KEY AUTO_INCREMENT,
     sender_location_id INT,
-    FOREIGN KEY (log_id) REFERENCES Location(email_id)
+    FOREIGN KEY (log_id) REFERENCES Email(email_id),
     FOREIGN KEY (sender_location_id) REFERENCES Location(location_id)
 );
