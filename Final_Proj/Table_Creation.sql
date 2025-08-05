@@ -23,7 +23,9 @@ CREATE TABLE Person (
     city VARCHAR(100),
     province VARCHAR(100),
     postal_code VARCHAR(10),
-    email VARCHAR(100)
+    email VARCHAR(100),
+    gender ENUM('Male', 'Female')
+    
 );
 
 CREATE TABLE ClubMember (
@@ -32,8 +34,12 @@ CREATE TABLE ClubMember (
     height DECIMAL(4,2),
     weight DECIMAL(5,2),
     is_minor BOOLEAN NOT NULL,
+    main_sponsor_id int,
     status ENUM('Active', 'Inactive') DEFAULT 'Active',
-    FOREIGN KEY (person_id) REFERENCES Person(person_id)
+    FOREIGN KEY (person_id) REFERENCES Person(person_id),
+    FOREIGN KEY (main_sponsor_id) REFERENCES ClubMember(person_id)
+    
+    
 );
 
 
@@ -136,12 +142,14 @@ CREATE TABLE MemberHobby (
 
 
 CREATE TABLE Payment (
-    payment_id INT PRIMARY KEY AUTO_INCREMENT,
+    payment_id INT AUTO_INCREMENT,
+    payment_installment INT,
     member_id INT,
     payment_date DATE NOT NULL,
     amount DECIMAL(8,2) NOT NULL,
     method ENUM('Cash', 'Debit Card', 'Credit Card'),
     membership_year YEAR NOT NULL,
+    PRIMARY KEY (payment_id,payment_installment),
     FOREIGN KEY (member_id) REFERENCES ClubMember(member_id)
 );
 
