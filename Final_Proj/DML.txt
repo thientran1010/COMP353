@@ -1,0 +1,421 @@
+INSERT IGNORE INTO Location_dev (location_id, name, type, address, city, province, postal_code, phone_number, web_address, max_capacity) VALUES
+(11, 'West Island Center', 'Branch', '200 West Blvd', 'Montreal', 'QC', 'H3Z1A2', '514-555-0001', 'west.example.com', 150),
+(12, 'East End Arena', 'Branch', '300 East St', 'Montreal', 'QC', 'H3Z1A3', '514-555-0002', 'east.example.com', 180),
+(13, 'North Shore Gym', 'Branch', '400 North Ave', 'Montreal', 'QC', 'H3Z1A4', '514-555-0003', 'north.example.com', 120),
+(14, 'South Side Sports', 'Branch', '500 South Rd', 'Montreal', 'QC', 'H3Z1A5', '514-555-0004', 'south.example.com', 160);
+
+INSERT IGNORE INTO Person_dev (person_id, first_name, last_name, date_of_birth, ssn, medicare_number, phone_number, address, city, province, postal_code, email) VALUES
+(4, 'David', 'Wilson', '1988-12-05', '444-55-6666', 'M22222', '514-100-4000', '30 Oak St', 'Montreal', 'QC', 'H3Z3C3', 'david@example.com'),
+(5, 'Emma', 'Brown', '1992-07-18', '555-66-7777', 'M33333', '514-100-5000', '40 Pine Ave', 'Montreal', 'QC', 'H3Z4D4', 'emma@example.com'),
+(6, 'Frank', 'Davis', '1985-11-30', '666-77-8888', 'M44444', '514-100-6000', '50 Maple Dr', 'Montreal', 'QC', 'H3Z5E5', 'frank@example.com'),
+(7, 'Grace', 'Miller', '1990-04-12', '777-88-9999', 'M55555', '514-100-7000', '60 Elm Ct', 'Montreal', 'QC', 'H3Z6F6', 'grace@example.com'),
+(8, 'Henry', 'Garcia', '1987-09-25', '888-99-0000', 'M66666', '514-100-8000', '70 Cedar Ln', 'Montreal', 'QC', 'H3Z7G7', 'henry@example.com'),
+(9, 'Ivy', 'Martinez', '1993-02-08', '999-00-1111', 'M77777', '514-100-9000', '80 Birch Way', 'Montreal', 'QC', 'H3Z8H8', 'ivy@example.com'),
+(10, 'Jack', 'Anderson', '1986-06-15', '000-11-2222', 'M88888', '514-101-0000', '90 Willow Pl', 'Montreal', 'QC', 'H3Z9I9', 'jack@example.com'),
+
+(11, 'Kate', 'Wilson', '2010-03-20', '111-22-3334', 'M99999', '514-101-1000', '30 Oak St', 'Montreal', 'QC', 'H3Z3C3', 'kate@example.com'),
+(12, 'Liam', 'Brown', '2009-08-10', '222-33-4445', 'M00000', '514-101-2000', '40 Pine Ave', 'Montreal', 'QC', 'H3Z4D4', 'liam@example.com'),
+(13, 'Mia', 'Davis', '2008-12-03', '333-44-5556', 'M11112', '514-101-3000', '50 Maple Dr', 'Montreal', 'QC', 'H3Z5E5', 'mia@example.com'),
+(14, 'Noah', 'Miller', '2007-05-18', '444-55-6667', 'M22223', '514-101-4000', '60 Elm Ct', 'Montreal', 'QC', 'H3Z6F6', 'noah@example.com'),
+(15, 'Olivia', 'Garcia', '2006-10-22', '555-66-7778', 'M33334', '514-101-5000', '70 Cedar Ln', 'Montreal', 'QC', 'H3Z7G7', 'olivia@example.com');
+
+
+INSERT IGNORE INTO ClubMember_dev (member_id, person_id, status) VALUES
+(103, 4, 'Active'),
+(104, 5, 'Active'),
+(105, 6, 'Active'),
+(106, 7, 'Active'),
+(107, 8, 'Active'),
+(108, 9, 'Active'),
+(109, 10, 'Active'),
+
+(110, 11, 'Active'),
+(111, 12, 'Active'),
+(112, 13, 'Active'),
+(113, 14, 'Active'),
+(114, 15, 'Active'),
+
+(115, 4, 'Inactive'),
+(116, 5, 'Inactive'),
+(117, 6, 'Inactive');
+
+
+INSERT IGNORE INTO Personnel_dev (person_id, role, mandate) VALUES
+(4, 'Coach', 'Salaried'),
+(5, 'Assistant Coach', 'Volunteer'),
+(6, 'Captain', 'Volunteer'),
+(7, 'Coach', 'Salaried'),
+(8, 'Assistant Coach', 'Volunteer'),
+(9, 'Other', 'Volunteer'),
+(10, 'Coach', 'Salaried');
+
+
+INSERT IGNORE INTO Team_dev (team_id, name, location_id, gender, head_coach_id) VALUES
+(501, 'Team B', 11, 'Male', 4),
+(502, 'Team C', 12, 'Female', 7),
+(503, 'Team D', 13, 'Male', 10),
+(504, 'Team E', 14, 'Female', 4),
+(505, 'Team F', 10, 'Male', 7);
+
+
+INSERT IGNORE INTO Session_dev (session_id, team1_id, team2_id, session_type, session_date, session_time, address, score_team1, score_team2) VALUES
+(601, 500, 501, 'Game', '2025-01-15', '14:00:00', 'Downtown Club', 25, 23),
+(602, 502, 503, 'Game', '2025-01-20', '16:00:00', 'West Island Center', 21, 25),
+(603, 504, 505, 'Game', '2025-01-25', '18:00:00', 'East End Arena', 24, 26),
+(604, 500, 502, 'Game', '2025-02-01', '15:00:00', 'Downtown Club', 25, 22),
+(605, 501, 503, 'Game', '2025-02-05', '17:00:00', 'West Island Center', 23, 25),
+(606, 502, 504, 'Game', '2025-02-10', '14:30:00', 'East End Arena', 26, 24),
+(607, 503, 505, 'Game', '2025-02-15', '16:30:00', 'North Shore Gym', 22, 25),
+(608, 504, 500, 'Game', '2025-02-20', '19:00:00', 'South Side Sports', 25, 23),
+(609, 505, 501, 'Game', '2025-02-25', '15:30:00', 'Downtown Club', 24, 26),
+(610, 500, 503, 'Game', '2025-03-01', '17:30:00', 'West Island Center', 25, 22),
+
+(611, 500, 501, 'Training', '2025-01-10', '18:00:00', 'Downtown Club', NULL, NULL),
+(612, 502, 503, 'Training', '2025-01-17', '19:00:00', 'West Island Center', NULL, NULL),
+(613, 504, 505, 'Training', '2025-01-24', '20:00:00', 'East End Arena', NULL, NULL),
+(614, 500, 502, 'Training', '2025-01-31', '18:30:00', 'Downtown Club', NULL, NULL),
+(615, 501, 503, 'Training', '2025-02-07', '19:30:00', 'West Island Center', NULL, NULL);
+
+
+INSERT IGNORE INTO PlayerAssignment_dev (session_id, member_id, team_id, role) VALUES
+(601, 101, 500, 'Setter'),
+(601, 101, 500, 'Libero'),
+(601, 101, 500, 'Outside Hitter'),
+(601, 101, 500, 'Opposite Hitter'),
+(601, 103, 501, 'Setter'),
+(601, 104, 501, 'Libero'),
+(601, 105, 501, 'Outside Hitter'),
+(601, 106, 501, 'Opposite Hitter'),
+
+(602, 102, 502, 'Setter'),
+(602, 107, 502, 'Libero'),
+(602, 108, 502, 'Outside Hitter'),
+(602, 109, 502, 'Opposite Hitter'),
+(602, 110, 503, 'Setter'),
+(602, 111, 503, 'Libero'),
+(602, 112, 503, 'Outside Hitter'),
+(602, 113, 503, 'Opposite Hitter'),
+
+(603, 114, 504, 'Setter'),
+(603, 103, 504, 'Libero'),
+(603, 104, 504, 'Outside Hitter'),
+(603, 105, 504, 'Opposite Hitter'),
+(603, 106, 505, 'Setter'),
+(603, 107, 505, 'Libero'),
+(603, 108, 505, 'Outside Hitter'),
+(603, 109, 505, 'Opposite Hitter'),
+
+(604, 100, 500, 'Setter'),
+(604, 101, 500, 'Libero'),
+(604, 110, 500, 'Outside Hitter'),
+(604, 111, 500, 'Opposite Hitter'),
+(604, 102, 502, 'Setter'),
+(604, 112, 502, 'Libero'),
+(604, 113, 502, 'Outside Hitter'),
+(604, 114, 502, 'Opposite Hitter'),
+
+(605, 103, 501, 'Setter'),
+(605, 104, 501, 'Libero'),
+(605, 105, 501, 'Outside Hitter'),
+(605, 106, 501, 'Opposite Hitter'),
+(605, 110, 503, 'Setter'),
+(605, 111, 503, 'Libero'),
+(605, 112, 503, 'Outside Hitter'),
+(605, 113, 503, 'Opposite Hitter'),
+
+(606, 102, 502, 'Setter'),
+(606, 107, 502, 'Libero'),
+(606, 108, 502, 'Outside Hitter'),
+(606, 109, 502, 'Opposite Hitter'),
+(606, 114, 504, 'Setter'),
+(606, 103, 504, 'Libero'),
+(606, 104, 504, 'Outside Hitter'),
+(606, 105, 504, 'Opposite Hitter'),
+
+(607, 110, 503, 'Setter'),
+(607, 111, 503, 'Libero'),
+(607, 112, 503, 'Outside Hitter'),
+(607, 113, 503, 'Opposite Hitter'),
+(607, 106, 505, 'Setter'),
+(607, 107, 505, 'Libero'),
+(607, 108, 505, 'Outside Hitter'),
+(607, 109, 505, 'Opposite Hitter'),
+
+(608, 114, 504, 'Setter'),
+(608, 103, 504, 'Libero'),
+(608, 104, 504, 'Outside Hitter'),
+(608, 105, 504, 'Opposite Hitter'),
+(608, 100, 500, 'Setter'),
+(608, 101, 500, 'Libero'),
+(608, 110, 500, 'Outside Hitter'),
+(608, 111, 500, 'Opposite Hitter'),
+
+(609, 106, 505, 'Setter'),
+(609, 107, 505, 'Libero'),
+(609, 108, 505, 'Outside Hitter'),
+(609, 109, 505, 'Opposite Hitter'),
+(609, 103, 501, 'Setter'),
+(609, 104, 501, 'Libero'),
+(609, 105, 501, 'Outside Hitter'),
+(609, 106, 501, 'Opposite Hitter'),
+
+(610, 100, 500, 'Setter'),
+(610, 101, 500, 'Libero'),
+(610, 110, 500, 'Outside Hitter'),
+(610, 111, 500, 'Opposite Hitter'),
+(610, 110, 503, 'Setter'),
+(610, 111, 503, 'Libero'),
+(610, 112, 503, 'Outside Hitter'),
+(610, 113, 503, 'Opposite Hitter'),
+
+(611, 100, 500, 'Setter'),
+(611, 101, 500, 'Libero'),
+(611, 110, 500, 'Outside Hitter'),
+(611, 111, 500, 'Opposite Hitter'),
+(611, 103, 501, 'Setter'),
+(611, 104, 501, 'Libero'),
+(611, 105, 501, 'Outside Hitter'),
+(611, 106, 501, 'Opposite Hitter'),
+
+(612, 102, 502, 'Setter'),
+(612, 107, 502, 'Libero'),
+(612, 108, 502, 'Outside Hitter'),
+(612, 109, 502, 'Opposite Hitter'),
+(612, 110, 503, 'Setter'),
+(612, 111, 503, 'Libero'),
+(612, 112, 503, 'Outside Hitter'),
+(612, 113, 503, 'Opposite Hitter'),
+
+(613, 114, 504, 'Setter'),
+(613, 103, 504, 'Libero'),
+(613, 104, 504, 'Outside Hitter'),
+(613, 105, 504, 'Opposite Hitter'),
+(613, 106, 505, 'Setter'),
+(613, 107, 505, 'Libero'),
+(613, 108, 505, 'Outside Hitter'),
+(613, 109, 505, 'Opposite Hitter'),
+
+(614, 100, 500, 'Setter'),
+(614, 101, 500, 'Libero'),
+(614, 110, 500, 'Outside Hitter'),
+(614, 111, 500, 'Opposite Hitter'),
+(614, 102, 502, 'Setter'),
+(614, 112, 502, 'Libero'),
+(614, 113, 502, 'Outside Hitter'),
+(614, 114, 502, 'Opposite Hitter'),
+
+(615, 103, 501, 'Setter'),
+(615, 104, 501, 'Libero'),
+(615, 105, 501, 'Outside Hitter'),
+(615, 106, 501, 'Opposite Hitter'),
+(615, 110, 503, 'Setter'),
+(615, 111, 503, 'Libero'),
+(615, 112, 503, 'Outside Hitter'),
+(615, 113, 503, 'Opposite Hitter');
+
+
+INSERT IGNORE INTO FamilyMember_dev (family_member_id, first_name, last_name, phone_number, email, relationship_description) VALUES
+(2, 'Dana', 'Wilson', '514-222-4444', 'dana@example.com', 'Mother'),
+(3, 'Evan', 'Brown', '514-222-5555', 'evan@example.com', 'Father'),
+(4, 'Fiona', 'Davis', '514-222-6666', 'fiona@example.com', 'Mother'),
+(5, 'George', 'Miller', '514-222-7777', 'george@example.com', 'Father'),
+(6, 'Helen', 'Garcia', '514-222-8888', 'helen@example.com', 'Mother');
+
+
+INSERT IGNORE INTO SecondaryFamilyContact_dev (member_id, first_name, last_name, phone_number, relationship) VALUES
+(103, 'Dana', 'Wilson', '514-222-4444', 'Mother'),
+(110, 'Dana', 'Wilson', '514-222-4444', 'Mother'),
+(104, 'Evan', 'Brown', '514-222-5555', 'Father'),
+(111, 'Evan', 'Brown', '514-222-5555', 'Father'),
+(105, 'Fiona', 'Davis', '514-222-6666', 'Mother'),
+(112, 'Fiona', 'Davis', '514-222-6666', 'Mother'),
+(106, 'George', 'Miller', '514-222-7777', 'Father'),
+(113, 'George', 'Miller', '514-222-7777', 'Father'),
+(107, 'Helen', 'Garcia', '514-222-8888', 'Mother'),
+(114, 'Helen', 'Garcia', '514-222-8888', 'Mother');
+
+
+INSERT IGNORE INTO MemberLocation_dev (member_id, location_id, start_date, end_date) VALUES
+(100, 11, '2020-01-01', '2021-06-30'),
+(100, 12, '2021-07-01', '2022-12-31'),
+
+(101, 11, '2018-01-01', '2019-06-30'),
+(101, 12, '2019-07-01', '2020-12-31'),
+
+(102, 13, '2020-01-01', '2021-06-30'),
+(102, 14, '2021-07-01', '2022-12-31'),
+
+(103, 11, '2020-01-01', NULL),
+(104, 12, '2020-01-01', NULL),
+(105, 13, '2020-01-01', NULL),
+(106, 14, '2020-01-01', NULL),
+(107, 10, '2020-01-01', NULL),
+(108, 11, '2020-01-01', NULL),
+(109, 12, '2020-01-01', NULL),
+(110, 13, '2020-01-01', NULL),
+(111, 14, '2020-01-01', NULL),
+(112, 10, '2020-01-01', NULL),
+(113, 11, '2020-01-01', NULL),
+(114, 12, '2020-01-01', NULL);
+
+
+INSERT IGNORE INTO PersonnelLocation_dev (person_id, location_id, start_date, end_date) VALUES
+(4, 11, '2020-01-01', NULL),
+(5, 12, '2020-01-01', NULL),
+(6, 13, '2020-01-01', NULL),
+(7, 14, '2020-01-01', NULL),
+(8, 10, '2020-01-01', NULL),
+(9, 11, '2020-01-01', NULL),
+(10, 12, '2020-01-01', NULL);
+
+
+INSERT IGNORE INTO HeadPersonnel_dev (person_id, role) VALUES
+(4, 'Branch Manager'),
+(7, 'Branch Manager'),
+(10, 'Branch Manager');
+
+
+INSERT IGNORE INTO HeadPersonnelLocation_dev (person_id, location_id, start_date, end_date) VALUES
+(4, 11, '2020-01-01', NULL),
+(7, 14, '2020-01-01', NULL),
+(10, 12, '2020-01-01', NULL);
+
+
+ALTER TABLE ClubMember_dev MODIFY COLUMN height decimal(5,2) DEFAULT NULL;
+
+UPDATE ClubMember_dev SET height = 165.5, weight = 58.2 WHERE member_id = 100;
+UPDATE ClubMember_dev SET height = 152.0, weight = 45.8 WHERE member_id = 101;
+UPDATE ClubMember_dev SET height = 178.3, weight = 72.1 WHERE member_id = 102;
+
+UPDATE ClubMember_dev SET height = 182.7, weight = 78.5 WHERE member_id = 103;
+UPDATE ClubMember_dev SET height = 168.9, weight = 62.3 WHERE member_id = 104;
+UPDATE ClubMember_dev SET height = 175.2, weight = 70.8 WHERE member_id = 105;
+UPDATE ClubMember_dev SET height = 163.4, weight = 55.9 WHERE member_id = 106;
+UPDATE ClubMember_dev SET height = 180.1, weight = 75.2 WHERE member_id = 107;
+UPDATE ClubMember_dev SET height = 166.8, weight = 59.7 WHERE member_id = 108;
+UPDATE ClubMember_dev SET height = 177.5, weight = 73.4 WHERE member_id = 109;
+
+UPDATE ClubMember_dev SET height = 145.2, weight = 38.5 WHERE member_id = 110;
+UPDATE ClubMember_dev SET height = 158.7, weight = 52.3 WHERE member_id = 111;
+UPDATE ClubMember_dev SET height = 162.1, weight = 48.9 WHERE member_id = 112;
+UPDATE ClubMember_dev SET height = 170.3, weight = 61.2 WHERE member_id = 113;
+UPDATE ClubMember_dev SET height = 155.8, weight = 51.7 WHERE member_id = 114;
+
+UPDATE ClubMember_dev SET height = 182.7, weight = 78.5 WHERE member_id = 115;
+UPDATE ClubMember_dev SET height = 168.9, weight = 62.3 WHERE member_id = 116;
+UPDATE ClubMember_dev SET height = 175.2, weight = 70.8 WHERE member_id = 117;
+
+
+INSERT INTO Email_dev (email_id, send_date, session_id, member_id, subject, body) VALUES
+(1, '2025-01-15', 600, 100, 'Training Session Reminder - Jan 15', 'Dear Alice, This is a reminder that you have a training session scheduled for today at 6:00 PM. Please arrive 15 minutes early for warm-up. Location: Downtown Club.'),
+(2, '2025-01-16', 601, 101, 'Game Session Update - Jan 16', 'Hi Bob, Your game session for tomorrow has been confirmed. Team A vs Team B at 7:00 PM. Please bring your team uniform and arrive by 6:30 PM.');
+
+
+INSERT INTO EmailLog_dev (log_id, email_id, sender_location_id, receiver_member_id, created_at) VALUES
+(1, 1, 10, 100, '2025-01-15 09:30:00'),
+(2, 2, 11, 101, '2025-01-16 14:15:00');
+
+
+INSERT INTO Hobby_dev (hobby_id, name) VALUES
+(1, 'volleyball'),
+(2, 'soccer'),
+(3, 'tennis'),
+(4, 'ping pong'),
+(5, 'swimming'),
+(6, 'hockey'),
+(7, 'golf');
+
+
+INSERT INTO MinorGuardianAssignment_dev (minor_member_id, family_member_id, relationship_type, start_date, end_date) VALUES
+(100, 2, 'Mother', '2024-01-01', NULL),
+(101, 3, 'Father', '2024-01-01', NULL),
+(102, 4, 'Mother', '2024-01-01', NULL),
+(103, 5, 'Father', '2024-01-01', NULL),
+(104, 6, 'Mother', '2024-01-01', NULL),
+(105, 2, 'Mother', '2024-01-01', NULL),
+(106, 3, 'Father', '2024-01-01', NULL),
+(107, 4, 'Mother', '2024-01-01', NULL),
+(108, 5, 'Father', '2024-01-01', NULL),
+(109, 6, 'Mother', '2024-01-01', NULL);
+
+
+INSERT INTO Person_dev (person_id, first_name, last_name, date_of_birth, ssn, medicare_number, phone_number, address, city, province, postal_code, email) VALUES
+(20, 'Sarah', 'Johnson', '2000-05-15', '123-45-6789', 'MED123456789', '514-555-0101', '123 Oak Street', 'Montreal', 'QC', 'H2X1A1', 'sarah.johnson@email.com'),
+(21, 'Michael', 'Chen', '1998-12-03', '987-65-4321', 'MED987654321', '514-555-0202', '456 Pine Avenue', 'Montreal', 'QC', 'H2Y2B2', 'michael.chen@email.com');
+
+INSERT INTO ClubMember_dev (member_id, person_id, height, weight, status) VALUES
+(120, 20, 165.0, 60.0, 'Active'),
+(121, 21, 175.0, 70.0, 'Active');
+
+INSERT INTO MemberLocation_dev (member_id, location_id, start_date, end_date) VALUES
+(120, 10, '2024-01-01', NULL),
+(121, 11, '2024-01-01', NULL);
+
+
+INSERT INTO Person_dev (person_id, first_name, last_name, date_of_birth, ssn, medicare_number, phone_number, address, city, province, postal_code, email) VALUES
+(22, 'Alex', 'Thompson', '1995-08-20', '888-77-6666', 'MED111222333', '514-555-0303', '789 Maple Road', 'Montreal', 'QC', 'H2Z3C3', 'alex.thompson@email.com');
+INSERT INTO ClubMember_dev (member_id, person_id, height, weight, status) VALUES
+(122, 22, 170.0, 65.0, 'Active');
+INSERT INTO MemberLocation_dev (member_id, location_id, start_date, end_date) VALUES
+(122, 10, '2024-01-01', NULL);
+INSERT INTO PlayerAssignment_dev (session_id, member_id, team_id, role) VALUES
+(601, 122, 500, 'Setter'),
+(602, 122, 502, 'Libero'),
+(604, 122, 500, 'Outside Hitter'),
+(603, 122, 504, 'Opposite Hitter');
+
+
+INSERT INTO FamilyMember_dev (family_member_id, first_name, last_name, phone_number, email, relationship_description) VALUES
+(7, 'Robert', 'Wilson', '514-555-0404', 'robert.wilson@email.com', 'Father');
+INSERT INTO Person_dev (person_id, first_name, last_name, date_of_birth, ssn, medicare_number, phone_number, address, city, province, postal_code, email) VALUES
+(23, 'Robert', 'Wilson', '1975-03-15', '666-55-4444', 'MED666554444', '514-555-0404', '321 Elm Street', 'Montreal', 'QC', 'H2W4D4', 'robert.wilson@email.com');
+INSERT INTO Personnel_dev (person_id, role, mandate) VALUES
+(23, 'Coach', 'Volunteer');
+INSERT INTO Team_dev (team_id, name, location_id, gender, head_coach_id) VALUES
+(506, 'Team Alpha', 10, 'Male', 23);
+INSERT INTO Person_dev (person_id, first_name, last_name, date_of_birth, ssn, medicare_number, phone_number, address, city, province, postal_code, email) VALUES
+(24, 'Emma', 'Wilson', '2010-06-10', '555-44-3333', 'MED555443333', '514-555-0505', '321 Elm Street', 'Montreal', 'QC', 'H2W4D4', 'emma.wilson@email.com');
+INSERT INTO ClubMember_dev (member_id, person_id, height, weight, status) VALUES
+(123, 24, 150.0, 45.0, 'Active');
+INSERT INTO MemberLocation_dev (member_id, location_id, start_date, end_date) VALUES
+(123, 10, '2024-01-01', NULL);
+INSERT INTO MinorGuardianAssignment_dev (minor_member_id, family_member_id, relationship_type, start_date, end_date) VALUES
+(123, 7, 'Father', '2024-01-01', NULL);
+
+
+INSERT INTO Person_dev (person_id, first_name, last_name, date_of_birth, ssn, medicare_number, phone_number, address, city, province, postal_code, email) VALUES
+(25, 'Jessica', 'Martinez', '1997-11-25', '444-33-2222', 'MED444332222', '514-555-0606', '654 Birch Lane', 'Montreal', 'QC', 'H2X5E5', 'jessica.martinez@email.com');
+INSERT INTO ClubMember_dev (member_id, person_id, height, weight, status) VALUES
+(124, 25, 168.0, 62.0, 'Active');
+INSERT INTO MemberLocation_dev (member_id, location_id, start_date, end_date) VALUES
+(124, 11, '2024-01-01', NULL);
+INSERT INTO Session_dev (session_id, team1_id, team2_id, session_type, session_date, session_time, address, score_team1, score_team2) VALUES
+(700, 500, 501, 'Game', '2025-01-15', '18:00:00', 'West Island Center', 25, 20);
+INSERT INTO PlayerAssignment_dev (session_id, member_id, team_id, role) VALUES
+(700, 124, 500, 'Setter');
+
+
+INSERT INTO Person_dev (person_id, first_name, last_name, date_of_birth, ssn, medicare_number, phone_number, address, city, province, postal_code, email) VALUES
+(26, 'Maria', 'Garcia', '1980-09-12', '333-22-1111', 'MED333221111', '514-555-0707', '987 Cedar Avenue', 'Montreal', 'QC', 'H2Y6F6', 'maria.garcia@email.com');
+INSERT INTO Personnel_dev (person_id, role, mandate) VALUES
+(26, 'Other', 'Volunteer');
+INSERT INTO FamilyMember_dev (family_member_id, first_name, last_name, phone_number, email, relationship_description) VALUES
+(8, 'Maria', 'Garcia', '514-555-0707', 'maria.garcia@email.com', 'Mother');
+INSERT INTO Person_dev (person_id, first_name, last_name, date_of_birth, ssn, medicare_number, phone_number, address, city, province, postal_code, email) VALUES
+(27, 'Carlos', 'Garcia', '2012-04-18', '222-11-0000', 'MED222110000', '514-555-0808', '987 Cedar Avenue', 'Montreal', 'QC', 'H2Y6F6', 'carlos.garcia@email.com');
+INSERT INTO ClubMember_dev (member_id, person_id, height, weight, status) VALUES
+(125, 27, 145.0, 40.0, 'Active');
+INSERT INTO MemberLocation_dev (member_id, location_id, start_date, end_date) VALUES
+(125, 12, '2024-01-01', NULL);
+INSERT INTO MinorGuardianAssignment_dev (minor_member_id, family_member_id, relationship_type, start_date, end_date) VALUES
+(125, 8, 'Mother', '2024-01-01', NULL);
+INSERT INTO PersonnelLocation_dev (person_id, location_id, start_date, end_date) VALUES
+(26, 12, '2024-01-01', NULL);
+
+
+INSERT INTO MemberLocation_dev (member_id, location_id, start_date, end_date) VALUES 
+(115, 10, '2021-03-15', '2022-03-15');
+INSERT INTO MemberLocation_dev (member_id, location_id, start_date, end_date) VALUES 
+(115, 11, '2021-08-01', '2023-08-01');
+INSERT INTO MemberLocation_dev (member_id, location_id, start_date, end_date) VALUES 
+(115, 12, '2022-06-01', '2024-01-01');
